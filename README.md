@@ -6,7 +6,7 @@ other desktop environments may vary.
 
 # TODO
 
-* Different types of reminder (ie. reocurring, coutndown reminder)
+* Different types of reminder (ie. reocurring, countdown reminder)
 * Clean up code
 * Documentation
 
