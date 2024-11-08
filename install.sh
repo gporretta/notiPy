@@ -6,14 +6,18 @@ if [ "$EUID" -eq 0 ]; then
   exit 1
 fi
 
-SCRIPT_PATH="$(pwd)/notipy_notifier.py"
+SERVICE_SCRIPT="notipy_notifier.py"
 SERVICE_FILE="notipy.service"
 SERVICE_PATH="$HOME/.config/systemd/user/$SERVICE_FILE"
 
-chmod +x "$SCRIPT_PATH"
+chmod +x "$SERVICE_SCRIPT"
 
 # Create user systemd directory if it doesn't exist
 mkdir -p "$HOME/.config/systemd/user"
+
+# Move the service to user systemd directory
+echo "Moving $SERVICE_SCRIPT to usr/local/bin..."
+sudo cp "$SERVICE_SCRIPT" /usr/local/bin/
 
 # Move the service to user systemd directory
 echo "Moving $SERVICE_FILE to $SERVICE_PATH..."

@@ -4,7 +4,7 @@ Description=Notipy Notifier Service
 [Service]
 Type=simple
 Environment=DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus
-ExecStart=/usr/bin/python3 /home/gino/Documents/notiPy/notipy_notifier.py
+ExecStart=/usr/bin/python3 /usr/local/bin/notipy_notifier.py
 
 [Install]
 WantedBy=default.target
