@@ -23,8 +23,14 @@ def check_reminders():
             reminder_type = reminder[4]
             
             # Send notification
-            subprocess.run(['notify-send', f'notiPy reminder', f'{message}'])
-            
+            subprocess.run([
+                'notify-send',
+                "notiPy Reminder",
+                message,
+                '--icon=dialog-information',  
+                '--urgency=normal'
+            ])
+
             if reminder_type == 'single':
                 cursor.execute('DELETE FROM reminders WHERE id = ?', (reminder_id,))
             

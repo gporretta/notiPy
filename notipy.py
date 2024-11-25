@@ -75,7 +75,6 @@ def main():
 
     args = parser.parse_args()
 
-
     message, notify_time = args.add if args.add else (None, None)
     reminder_type = args.type
     
